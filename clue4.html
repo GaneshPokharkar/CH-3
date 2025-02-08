@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Crossword</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: url('bc.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        input[type="text"] {
+            width: 300px;
+            height: 40px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body onload="playBackgroundMusic()">
+    <div class="container">
+        <h1>The Ghostly Mansion</h1>
+        <p>Now, use the numbers in sequence to solve this puzzle:<br>
+
+            follow the instructions below to uncover a hidden number: <br>
+
+            Start with the position of P in the alphabet. <br>
+Add H's position in the alphabet. <br>
+Add A's position in the alphabet. <br>
+Subtract N's position in the alphabet. <br>
+Add T's position in the alphabet. <br>
+Finally, subtract M's position in the alphabet. <br>
+What number does this calculation result in? <br>
+
+        <img src="123.jpg" alt="Ghost Crossword" class="puzzle-image">
+        <p>Congratulations! You've reached the final clue.</p>
+        <input type="text" id="final-answer" placeholder="Enter the word">
+        <button onclick="checkFinalAnswer()">Submit</button>
+        <p id="final-result"></p>
+    </div>
+
+    <audio id="background-music" src="background-music.mp3" loop></audio>
+    <audio id="ghost-whispers" src="ghost-whispers.mp3"></audio>
+
+    <script>
+        function playBackgroundMusic() {
+            document.getElementById("background-music").play();
+        }
+
+        document.body.addEventListener('mouseover', function() {
+            document.getElementById("ghost-whispers").play();
+        });
+
+        function checkFinalAnswer() {
+            const answer = document.getElementById("final-answer").value;
+            if (answer === "18") {
+                document.getElementById("final-result").innerText = "Correct! Redirecting to the final page...";
+                setTimeout(() => {
+                    window.location.href = "mission_accomplished.html";
+                }, 2000);
+            } else {
+                document.getElementById("final-result").innerText = "Incorrect. Try again.";
+            }
+        }
+    </script>
+</body>
+</html>

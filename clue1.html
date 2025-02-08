@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Search Puzzle Challenge</title>
+  <link rel="stylesheet" href="1.css">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('bc.webp');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .puzzle-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+      border: 2px solid #000;
+      padding: 10px;
+      width: fit-content;
+    }
+    canvas {
+      border: 1px solid #000;
+    }
+    /* Add this style to change the crossword text color to white */
+    #wordSearchCanvas {
+      color: white;
+    }
+    input[type="text"] {
+      width: 300px;
+      height: 40px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>The Word Search Puzzle Challenge</h1>
+    <h2>Find the Hidden Words</h2>
+    
+    <!-- Word Search Puzzle Area -->
+    <div class="puzzle-container">
+      <canvas id="wordSearchCanvas" width="800" height="600"></canvas>
+    </div>
+
+    <!-- Code Input Area -->
+    <div class="code-input">
+      <label for="word1">Enter the first word:</label>
+      <input type="text" id="word1" oninput="validateWords()" placeholder="9letter"> <br>
+      <label for="word2">Enter the second word:</label>
+      <input type="text" id="word2" oninput="validateWords()" placeholder="5letter">
+      <button id="submit-button" onclick="checkCode()" disabled>Submit</button>
+    </div>
+
+    <!-- Next Clue Area (Hidden by Default) -->
+    <!-- <div id="next-clue" class="hidden">
+      <h3>Congratulations! The next clue is:</h3>
+      <p>Clue: Follow the trail to the next mission.</p>
+      <button onclick="goToNextPage()">Next Page</button>
+    </div> -->
+  </div>
+
+  <audio id="background-music" src="Royalty Free Soundtrack - Spyaction hybrid orchestral - GRMUSIC NYC [ ezmp3.cc ].mp3" autoplay loop muted></audio>
+
+  <script>
+    // JavaScript for interactivity
+    function validateWords() {
+      const word1 = document.getElementById('word1').value.toUpperCase();
+      const word2 = document.getElementById('word2').value.toUpperCase();
+      const submitButton = document.getElementById('submit-button');
+      if (word1 === "NIGHTMARE" && word2 === "GHOST") {
+        submitButton.disabled = false;
+      } else {
+        submitButton.disabled = true;
+      }
+    }
+
+    function checkCode() {
+      const word1 = document.getElementById('word1').value.toUpperCase();
+      const word2 = document.getElementById('word2').value.toUpperCase();
+      if (word1 === "NIGHTMARE" && word2 === "GHOST") {
+        window.location.href = 'clue2.html'; // Redirect to the second page
+      } else {
+        alert("Incorrect words. Try again!");
+      }
+    }
+
+    function showHint() {
+      // Functionality removed
+    }
+
+    function goToNextPage() {
+      window.location.href = 'clue2.html'; // Link to the second page
+    }
+
+    // JavaScript for offline word search puzzle
+    const canvas = document.getElementById('wordSearchCanvas');
+    const context = canvas.getContext('2d');
+    const words = ["GHOST", "NIGHTMARE"];
+    const grid = [
+      ['S', 'P', 'Y', 'A', 'B', 'C', 'D', 'E', 'F', 'G'],
+      ['H', 'I', 'J', 'G', 'L', 'M', 'N', 'O', 'P', 'Q'],
+      ['R', 'S', 'T', 'H', 'V', 'W', 'I', 'Y', 'Z', 'A'],
+      ['B', 'C', 'D', 'O', 'F', 'G', 'G', 'I', 'J', 'K'],
+      ['L', 'M', 'N', 'S', 'P', 'Q', 'H', 'S', 'T', 'U'],
+      ['V', 'W', 'X', 'T', 'Z', 'A', 'T', 'C', 'D', 'E'],
+      ['F', 'G', 'H', 'I', 'J', 'K', 'M', 'M', 'N', 'O'],
+      ['P', 'Q', 'R', 'S', 'T', 'U', 'A', 'W', 'X', 'Y'],
+      ['Z', 'A', 'G', 'E', 'N', 'T', 'R', 'G', 'H', 'I'],
+      ['J', 'K', 'L', 'M', 'N', 'O', 'E', 'Q', 'R', 'S']
+    ];
+
+    function drawGrid() {
+      context.font = '20px Arial';
+      context.fillStyle = 'white'; // Set text color to white
+      for (let i = 0; i < grid.length; i++) {
+        for (let j = 0; j < grid[i].length; j++) {
+          context.fillText(grid[i][j], j * 40 + 10, i * 40 + 30);
+        }
+      }
+    }
+
+    drawGrid();
+
+    // Additional JavaScript to handle word search puzzle interactions
+
+    // Disable inspect option
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('keydown', event => {
+      if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>

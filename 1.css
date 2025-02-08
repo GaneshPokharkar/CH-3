@@ -1,0 +1,294 @@
+/* General Styles */
+body {
+    font-family: 'Creepster', cursive;
+    background: url('sebastian-bar-ground1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(26, 26, 26, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #ff0000;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #ff6666;
+    margin-bottom: 20px;
+}
+
+/* Puzzle Container */
+.puzzle-container {
+    margin: 20px 0;
+}
+
+iframe {
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+}
+
+/* Code Input Area */
+.code-input {
+    margin: 20px 0;
+}
+
+.code-input label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.code-input input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ff0000;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.code-input button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.code-input button:hover {
+    background-color: #cc0000;
+}
+
+/* Hint Button */
+.hint {
+    margin: 20px 0;
+}
+
+.hint button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hint button:hover {
+    background-color: #218838;
+}
+
+#hint-text {
+    margin-top: 10px;
+    font-style: italic;
+    color: #ff6666;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Next Clue Area */
+#next-clue {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+#next-clue h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ff0000;
+}
+
+#next-clue p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+}
+
+/* Additional Styles for Other Pages */
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.cipher-key img {
+    width: 400px;
+    margin-bottom: 40px;
+}
+
+.encoded-message {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.input-box input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 70%;
+    margin-right: 10px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #ff0000;
+}
+
+.input-box button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #ff0000;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-box button:hover {
+    background: #cc0000;
+}
+
+.map {
+    margin-top: 20px;
+    display: none;
+}
+
+.map img {
+    width: 300px;
+    height: auto;
+}
+
+.animation img {
+    width: 200px;
+    height: auto;
+}
+
+.certificate a {
+    color: #ff6b6b;
+    text-decoration: none;
+}
+
+.certificate a:hover {
+    text-decoration: underline;
+}
+
+.leaderboard {
+    margin: 20px 0;
+}
+
+.social-media a {
+    color: #ff6b6b;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}
+
+/* Styles for specific pages */
+body.page-2 {
+    background-color: #002b36;
+    font-family: 'Creepster', cursive;
+    color: #ff0000;
+}
+
+body.page-2 .container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+}
+
+body.page-2 h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #ff0000;
+    text-shadow: 2px 2px 5px #000;
+}
+
+body.page-2 .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+body.page-2 .cipher-key img {
+    width: 400px;
+    margin-bottom: 40px;
+}
+
+body.page-2 .encoded-message {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+body.page-2 .input-box input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 70%;
+    margin-right: 10px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #ff0000;
+}
+
+body.page-2 .input-box button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #ff0000;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+body.page-2 .input-box button:hover {
+    background: #cc0000;
+}
+
+body.page-2 .hint button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #ff0000;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+body.page-2 .hint button:hover {
+    background: #cc0000;
+}
+
+body.page-2 .hidden {
+    display: none;
+}
+
+body.page-2 #hint-text {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #ff0000;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirror Cipher</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: url('bc.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        @keyframes blurAnimation {
+            0% { filter: blur(0px); }
+            50% { filter: blur(5px); }
+            100% { filter: blur(0px); }
+        }
+
+        /* Remove the rotateAnimation keyframes */
+        /*
+        @keyframes rotateAnimation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        */
+
+        .puzzle-image {
+            animation: blurAnimation 1s infinite; /* Remove rotateAnimation */
+        }
+
+        input[type="text"] {
+            width: 300px;
+            height: 40px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body onload="playBackgroundMusic()">
+    <div class="container">
+        <h1>The Ghostly Mansion</h1>
+        <p>Find the Correct word to NIGHTMARE.</p>
+        <img src="Caesar_cipher_left_shift_of_3.svg.png" alt="Mirror Cipher" class="puzzle-image"> <br>
+        <input type="text" id="cipher-answer" placeholder="Enter the name">
+        <button onclick="checkCipher()">Submit</button>
+        <p id="cipher-result"></p>
+        <a id="next-link" href="clue3.html" style="display: none;" onclick="playDoorCreak()">Proceed to Next Clue</a>
+    </div>
+
+    <audio id="background-music" src="background-music.mp3" loop></audio>
+    <audio id="ghost-whispers" src="ghost-whispers.mp3"></audio>
+    <audio id="jumpscare-scream" src="jumpscare-scream.mp3"></audio>
+    <audio id="door-creak" src="door-creak.mp3"></audio>
+
+    <script>
+        function playBackgroundMusic() {
+            document.getElementById("background-music").play();
+        }
+
+        document.body.addEventListener('mouseover', function() {
+            document.getElementById("ghost-whispers").play();
+        });
+
+        function checkCipher() {
+            const answer = document.getElementById("cipher-answer").value.toLowerCase();
+            if (answer === "kdgeqjxob") {
+                document.getElementById("cipher-result").innerText = "Correct! Redirecting to the next page...";
+                setTimeout(() => {
+                    window.location.href = "clue3.html";
+                }, 2000);
+            } else {
+                document.getElementById("cipher-result").innerText = "Incorrect. Try again.";
+                document.getElementById("jumpscare-scream").play();
+            }
+        }
+
+        function playDoorCreak() {
+            document.getElementById("door-creak").play();
+        }
+
+        // Disable inspect option
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', event => {
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
+

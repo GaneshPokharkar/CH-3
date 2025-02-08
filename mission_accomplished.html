@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Accomplished</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: url('bc.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(1); }
+            to { transform: scale(1.5); }
+        }
+
+        .message {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .puzzle-image {
+            animation: zoomIn 1s ease-in-out;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            height: 40px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body onload="playBackgroundMusic()">
+    <div class="container">
+        <h1 class="message">Mission Accomplished!</h1>
+        <p class="message">Congratulations! You have successfully completed all the puzzles in The Ghostly Mansion.</p>
+        <!-- <img src="celebration.jpg" alt="Celebration" class="puzzle-image"> -->
+        <p class="message">Thank you for playing!</p>
+    </div>
+
+    <audio id="background-music" src="background-music.mp3" loop></audio>
+    <audio id="celebration-sound" src="celebration-sound.mp3"></audio>
+
+    <script>
+        function playBackgroundMusic() {
+            document.getElementById("background-music").play();
+        }
+
+        window.onload = function() {
+            document.getElementById("celebration-sound").play();
+        }
+
+        // Disable inspect option
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', event => {
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

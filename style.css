@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+body {
+    background: url('house.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Creepster', cursive;
+    text-align: center;
+    overflow-y: auto; /* Enable vertical scrolling */
+    font-size: 1.5em; /* Increase base font size */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Add padding to ensure content is not cut off */
+}
+
+/* Glitching Title */
+h1 {
+    font-size: 4.5em; /* Increase font size proportionally */
+    color: red;
+    text-shadow: 4px 4px 10px black;
+    animation: glitch 0.5s infinite alternate, flicker 1s infinite alternate;
+}
+
+/* Glitch effect */
+@keyframes glitch {
+    0% { transform: skewX(-10deg); }
+    20% { transform: skewX(10deg); }
+    40% { transform: skewX(-5deg); }
+    60% { transform: skewX(5deg); }
+    80% { transform: skewX(-2deg); }
+    100% { transform: skewX(2deg); }
+}
+
+/* Flickering effect */
+@keyframes flicker {
+    0% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+/* Blood Dripping Text */
+.blood-text {
+    font-size: 3em; /* Increase font size proportionally */
+    color: red;
+    text-shadow: 0px 0px 20px red;
+    animation: blood-drip 2s infinite alternate;
+}
+
+@keyframes blood-drip {
+    0% { text-shadow: 0px 0px 10px red; }
+    100% { text-shadow: 0px 10px 30px red; transform: translateY(5px); }
+}
+
+/* Floating Ghost Effect */
+.puzzle-image {
+    width: 80%;
+    max-width: 600px;
+    border: 5px solid red;
+    box-shadow: 0px 0px 15px red;
+    filter: grayscale(100%) brightness(80%);
+    animation: floatGhost 3s infinite alternate;
+}
+
+@keyframes floatGhost {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Screen Shake Effect */
+.shake {
+    animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(0px, 0px); }
+    25% { transform: translate(-5px, 5px); }
+    50% { transform: translate(5px, -5px); }
+    75% { transform: translate(-5px, 5px); }
+    100% { transform: translate(5px, -5px); }
+}
+
+/* Red Flash Effect */
+.flash {
+    animation: redFlash 0.2s infinite;
+}
+
+@keyframes redFlash {
+    0% { background-color: black; }
+    100% { background-color: darkred; }
+}
+
+/* Spooky Buttons */
+button {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 1.8em; /* Increase font size proportionally */
+    border: none;
+    background-color: darkred;
+    color: white;
+    font-family: 'Creepster', cursive;
+    text-transform: uppercase;
+    animation: flicker 1.5s infinite alternate;
+}
+
+button:hover {
+    background-color: red;
+    box-shadow: 0px 0px 10px white;
+}
+
+/* Spooky Links */
+a {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: darkred;
+    color: white;
+    text-decoration: none;
+    font-size: 2.25em; /* Increase font size proportionally */
+    border: 2px solid red;
+    animation: blood-drip 2s infinite alternate;
+}
+
+a:hover {
+    background-color: black;
+}
+
+/* Centered Container */
+.container {
+    position: relative; /* Change to relative to allow scrolling */
+    background-color: rgba(0, 0, 0, 0.5); /* Box color with 50% opacity */
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid red; /* Add border around the container */
+    opacity: 1;
+    margin: 20px auto; /* Center the container with margin */
+    max-width: 800px; /* Set a max-width for the container */
+}
+
+.container * {
+    opacity: 1; /* Ensure text inside the container has 100% opacity */
+}
